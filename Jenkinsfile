@@ -2,9 +2,9 @@
 
 pipeline {
 
-     agent any
+         agent any
 
-stages {
+    stages {
 
        
 
@@ -18,9 +18,9 @@ stages {
             }
 
 
-         }
+        }
 
-         stage ('DockerSetup'){
+        stage ('DockerSetup'){
             steps{
                 script{
                     def dockerHome = tool 'myDocker'
@@ -28,14 +28,14 @@ stages {
                     env.PATH = "${dockerHome}/bin:${env.PATH}"
                 }
             }
-         }
+        }
 
 
         stage('Docker Check'){
                 steps{
 
                     script{
-                        echo "chekcing docker ........................"
+                        echo "checking docker ........................"
                         sh "docker --version"
                         sh "whoami"
 
@@ -43,6 +43,10 @@ stages {
 
                 }
 
-        }
-        
-}
+        } 
+
+
+
+            
+    }
+}        
